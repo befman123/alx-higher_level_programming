@@ -11,6 +11,7 @@ int check_cycle(listint_t *list)
 
 	temp = list;
 	if (list)
+	{
 		while ((temp = temp->next))
 			while (list)
 			{
@@ -18,5 +19,6 @@ int check_cycle(listint_t *list)
 					return (1);
 				list = list->next;
 			}
-	return (0);
+		return (0);
+	}
 }
