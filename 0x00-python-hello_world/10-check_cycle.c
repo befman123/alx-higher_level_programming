@@ -10,8 +10,9 @@ int check_cycle(listint_t *list)
 	listint_t *temp;
 
 	temp = list;
-	while ((temp = temp->next))
-		if (temp == list)
-			return (1);
+	if (list)
+		while ((temp = temp->next)
+		       if (temp == list)
+			       return (1);
 	return (0);
 }
