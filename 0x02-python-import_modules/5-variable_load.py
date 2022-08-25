@@ -6,5 +6,6 @@ def print_it():
     print(a)
     return
 
+
 if __name__ == "__main__":
     print_it()
