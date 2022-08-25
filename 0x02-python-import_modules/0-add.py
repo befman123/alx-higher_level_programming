@@ -8,5 +8,5 @@ def my_add():
     print(f"{a} + {b} = {add(a,b)}")
 
 
-if (__name__=="__main__"):
+if (__name__ == "__main__"):
     my_add()
