@@ -3,13 +3,10 @@ from add_0 import add
 
 
 def my_add():
-
-    Args:
-        a = 1
-        b = 2
-
+    a = 1
+    b = 2
     print(f"{a} + {b} = {add(a,b)}")
 
 
-if __name__ = "__main__":
+if (__name__ = "__main__"):
     my_add()
