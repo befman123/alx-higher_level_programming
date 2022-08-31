@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def print_alphabet():
     for i in range(97, 123):
-        if i !=  113 and i != 101: 
+        if i != 113 and i != 101:
             print("{0}".format(chr(i)), end="")
 
 
