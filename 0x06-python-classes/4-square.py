@@ -25,12 +25,14 @@ class Square:
         """
         return self.__size ** 2
 
-    def size(self, value):
+    def size(self, value=None):
         """A setter for the private size attribute
         Args:
             value: the value to set to size
         """
-        if type(value) is not int:
+        if value is None:
+            return self.__size
+        elif type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be {0} 0".format(">="))
