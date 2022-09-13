@@ -8,7 +8,6 @@ class Square:
     Attributes:
         size (int): the size of one side of a square
     """
-    __size = 0
 
     def __init__(self, size=0):
         if type(size) is not int:
@@ -16,14 +15,14 @@ class Square:
         elif size < 0:
             raise ValueError("size must be {0} 0".format(">="))
         else:
-            self.__size = size
+            self._size = size
 
     def area(self):
         """Calculates the area of a square
         Returns:
             the area of the square
         """
-        return self.__size ** 2
+        return self._size ** 2
 
     def size(self, value=None):
         """A setter for the private size attribute
@@ -31,14 +30,16 @@ class Square:
             value: the value to set to size
         """
         if value is None:
-            return self.__size
+            return self._size
         elif type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be {0} 0".format(">="))
         else:
-            self.__size = value
+            self._size = value
+
+    size = property(size, size)
 
 
 if __name__ == "__main__":
-    a = Square()
+    a = Square(5)
