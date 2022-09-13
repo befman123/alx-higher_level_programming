@@ -27,5 +27,4 @@ class Square:
 
 
 if __name__ == "__main__":
-    a = Square(5)
-    print("{0}".format(a.area()))
+    a = Square()
