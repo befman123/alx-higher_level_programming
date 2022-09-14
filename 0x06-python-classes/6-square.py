@@ -36,6 +36,9 @@ class Square:
     def my_print(self):
         if self.size != 0:
             for i in range(0, self.size):
+                if self.position[1] > 0:
+                    for w in range(0, self.position[0]):
+                        print("{0}".format(" "), end="")
                 for j in range(0, self.size):
                     print("{0}".format("#"), end="")
                 print("")
@@ -61,19 +64,25 @@ class Square:
         Args:
             value: the value to set to position
         """
-        if type(position) is not tuple:
+        if value is None:
+            return self._position
+        elif type(value) is not tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif type(position[0]) is not int or position[0] < 0:
+        elif type(value[0]) is not int or value[0] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif type(position[1]) is not int or position[1] < 0:
+        elif type(value[1]) is not int or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self._position = position
+            self._position = value
 
     size = property(size, size)
     position = property(position, position)
 
 
 if __name__ == "__main__":
-    a = Square(5, "position")
+    a = Square(5, (1, 1))
+    a.my_print()
+    a = Square(5, (3, 0))
+    a.my_print()
+    a = Square(5, (3, 3))
     a.my_print()
