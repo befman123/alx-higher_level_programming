@@ -91,9 +91,9 @@ class Square:
                     s = s + " "
                 for j in range(0, self.size):
                     s = s + "#"
+                if i == (self.size - 1):
+                    continue
                 s = s + "\n"
-        else:
-            s = s + "\n"
         return s
 
     size = property(size, size)
@@ -102,5 +102,4 @@ class Square:
 
 if __name__ == "__main__":
     b = Square(3, (3, 1))
-    b.my_print()
     print(b)
