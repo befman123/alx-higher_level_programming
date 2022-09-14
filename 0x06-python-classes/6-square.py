@@ -37,8 +37,8 @@ class Square:
 
     def my_print(self):
         if self.size != 0:
-            for l in range(0, self.position[1]):
-                    print()
+            for x in range(0, self.position[1]):
+                print()
             for i in range(0, self.size):
                 for w in range(0, self.position[0]):
                     print("{0}".format(" "), end="")
@@ -86,4 +86,4 @@ class Square:
 
 
 if __name__ == "__main__":
-    b = Square(1,(1,))
+    b = Square(1, (1,))
