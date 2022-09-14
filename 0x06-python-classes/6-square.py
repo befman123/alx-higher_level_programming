@@ -17,7 +17,9 @@ class Square:
         else:
             self._size = size
 
-        if type(position) is not tuple:
+        if len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(position) is not tuple:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif type(position[0]) is not int or position[0] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
@@ -64,14 +66,17 @@ class Square:
         Args:
             value: the value to set to position
         """
+        error_string = "position must be a tuple of 2 positive integers"
         if value is None:
             return self._position
+        elif len(value) != 2:
+            raise TypeError(error_string)
         elif type(value) is not tuple:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError(error_string)
         elif type(value[0]) is not int or value[0] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError(error_string)
         elif type(value[1]) is not int or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError(error_string)
         else:
             self._position = value
 
@@ -80,4 +85,4 @@ class Square:
 
 
 if __name__ == "__main__":
-    a = Square()
+    b = Square(1,(1,))
