@@ -81,22 +81,21 @@ class Square:
         else:
             self._position = value
 
-    
     def __str__(self):
-            s = ""
-            if self.size != 0:
-                for x in range(0, self.position[1]):
-                    s = s + "\n"
-                for i in range(0, self.size):
-                    for w in range(0, self.position[0]):
-                        s = s + " "
-                    for j in range(0, self.size):
-                        s = s + "#"
-                    s = s + "\n"
-            else:
+        s = ""
+        if self.size != 0:
+            for x in range(0, self.position[1]):
                 s = s + "\n"
-            return s
-    
+            for i in range(0, self.size):
+                for w in range(0, self.position[0]):
+                    s = s + " "
+                for j in range(0, self.size):
+                    s = s + "#"
+                s = s + "\n"
+        else:
+            s = s + "\n"
+        return s
+
     size = property(size, size)
     position = property(position, position)
 
