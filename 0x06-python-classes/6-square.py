@@ -16,12 +16,12 @@ class Square:
             raise ValueError("size must be {0} 0".format(">="))
         else:
             self._size = size
-        l1 = type(position) is not tuple
-        l2 = type(position[0]) is not int
-        l3 = type(position[1]) is not int
-        l4 = position[0] < 0
-        l5 = position[1] < 0
-        if (((l1 or l2) or l3) or l4) or l5:
+
+        if type(position) is not tuple:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(position[0]) is not int or position[0] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(position[1]) is not int or position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self._position = position
@@ -61,21 +61,19 @@ class Square:
         Args:
             value: the value to set to position
         """
-        if value is None:
-            return self._position
-        l1 = type(value) is not tuple
-        l2 = type(value[0]) is not int
-        l3 = type(value[1]) is not int
-        l4 = value[0] < 0
-        l5 = value[1] < 0
-        if (((l1 or l2) or l3) or l4) or l5:
+        if type(position) is not tuple:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(position[0]) is not int or position[0] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif type(position[1]) is not int or position[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self._position = value
+            self._position = position
 
     size = property(size, size)
     position = property(position, position)
 
 
 if __name__ == "__main__":
-    a = Square()
+    a = Square(5, "position")
+    a.my_print()
