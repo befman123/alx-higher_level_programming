@@ -80,9 +80,4 @@ class Square:
 
 
 if __name__ == "__main__":
-    a = Square(5, (1, 1))
-    a.my_print()
-    a = Square(5, (3, 0))
-    a.my_print()
-    a = Square(5, (3, 3))
-    a.my_print()
+    a = Square()
