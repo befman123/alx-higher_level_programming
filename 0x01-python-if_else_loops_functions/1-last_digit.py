@@ -2,6 +2,7 @@
 import random
 number = random.randint(-10000, 10000)
 number1 = 0
+number = -98
 if number < 0:
     number1 = (number * -1) % 10
     number1 = number1 * -1
