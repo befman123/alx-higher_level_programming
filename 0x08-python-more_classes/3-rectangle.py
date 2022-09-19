@@ -83,7 +83,8 @@ class Rectangle:
         for i in range(0, self.height):
             for j in range(0, self.width):
                 s = s + "#"
-            s = s + "\n"
+            if i != self.height - 1:
+                s = s + "\n"
         return s
 
     height = property(height, height)
@@ -91,7 +92,7 @@ class Rectangle:
 
 
 if __name__ == "__main__":
-    a = Rectangle()
+    a = Rectangle(5, 10)
     print(a.width)
     print(a.height)
     print(a)
