@@ -110,17 +110,12 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be {0} 0".format(">="))
-        else:
-            return cls(size, size)
+        return cls(size, size)
 
 
 if __name__ == "__main__":
     try:
-        mysquare = Rectangle.square(-2)
+        mysquare = Rectangle.square(-5)
         print("{} / {}".format(mysquare.width, mysquare.height))
     except Exception as e:
         print("[{}] {}".format(e.__class__.__name__, e))
