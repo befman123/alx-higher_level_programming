@@ -10,6 +10,7 @@ class Rectangle:
     __height: private postive integer
     number_of_instances: a public class varible that is incremented
                             at __init__ and decrenmented at __del__
+    print_symbol: a public class variable that stores the value to be printed
     """
     number_of_instances = 0
     print_symbol = "#"
@@ -87,9 +88,11 @@ class Rectangle:
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
-        Rectangle.number_of_instances = Rectangle.number_of_instances - 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
 
 if __name__ == "__main__":
+    Rectangle.printsymbol = "C"
     myrectangle1 = Rectangle(8, 4)
+    print(myrectangle1)
