@@ -12,7 +12,7 @@ class Rectangle:
                             at __init__ and decrenmented at __del__
     """
     number_of_instances = 0
-    print_symbol = ""
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
 
@@ -92,7 +92,4 @@ class Rectangle:
 
 
 if __name__ == "__main__":
-    a = Rectangle(int(5), int(10))
-    print(Rectangle.number_of_instances)
-    Rectangle.print_symbol = "&"
-    print(a)
+    myrectangle1 = Rectangle(8, 4)
