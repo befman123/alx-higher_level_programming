@@ -92,6 +92,9 @@ class Rectangle:
         print("Bye rectangle...")
 
     def bigger_or_equal(rect_1, rect_2):
+        """public static method, means that neither self nor cls are passed
+            implicitly
+        """
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         elif type(rect_2) is not Rectangle:
@@ -116,6 +119,8 @@ class Rectangle:
 
 
 if __name__ == "__main__":
-    Rectangle.print_symbol = "C"
-    myrectangle1 = Rectangle(8, 4)
-    print(myrectangle1)
+    try:
+        mysquare = Rectangle.square(-2)
+        print("{} / {}".format(mysquare.width, mysquare.height))
+    except Exception as e:
+        print("[{}] {}".format(e.__class__.__name__, e))
