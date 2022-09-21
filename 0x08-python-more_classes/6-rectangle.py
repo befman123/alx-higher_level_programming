@@ -12,6 +12,7 @@ class Rectangle:
                             at __init__ and decrenmented at __del__
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
 
@@ -22,40 +23,30 @@ class Rectangle:
         height: a positive integer used as a height of a rectangle
 
         """
-        if height is None:
-            return self.__height
-        elif type(height) is not int:
-            raise TypeError("height must be an integer")
-        elif height < 0:
-            raise ValueError("height must be {0} 0".format(">="))
-        else:
-            self.__height = height
-
-        if width is None:
-            return self.__width
-        elif type(width) is not int:
-            raise TypeError("width must be an integer")
-        elif width < 0:
-            raise ValueError("width must be {0} 0".format(">="))
-        else:
-            self.__width = width
-
+        self.height = height
+        self.width = width
         Rectangle.number_of_instances += 1
 
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
     def height(self, value):
-        if value is None:
-            return self.__height
-        elif type(value) is not int:
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be {0} 0".format(">="))
         else:
             self.__height = value
 
-    def width(self, value=None):
-        if value is None:
-            return self.__width
-        elif type(value) is not int:
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be {0} 0".format(">="))
@@ -87,7 +78,7 @@ class Rectangle:
             return ""
         for i in range(0, self.height):
             for j in range(0, self.width):
-                s = s + "#"
+                s = s + Rectangle.print_symbol
             if i != self.height - 1:
                 s = s + "\n"
         return s
@@ -99,11 +90,9 @@ class Rectangle:
         Rectangle.number_of_instances = Rectangle.number_of_instances - 1
         print("Bye rectangle...")
 
-    height = property(height, height)
-    width = property(width, width)
-
 
 if __name__ == "__main__":
     a = Rectangle(int(5), int(10))
     print(Rectangle.number_of_instances)
-    print(Rectangle.number_of_instances)
+    Rectangle.print_symbol = "&"
+    print(a)
