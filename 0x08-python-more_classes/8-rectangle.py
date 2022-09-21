@@ -54,7 +54,7 @@ class Rectangle:
         else:
             self.__width = value
 
-    def area(self, value):
+    def area(self):
         """ Calculates the rea of a rectangle
 
         Returns:
@@ -92,9 +92,9 @@ class Rectangle:
         print("Bye rectangle...")
 
     def bigger_or_equal(rect_1, rect_2):
-        if type(rect_1) is not type(Rectangle):
+        if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of a rectangle")
-        elif type(rect_2) is not type(Rectangle):
+        elif type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of a rectangle")
 
         area_1 = rect_1.area()
