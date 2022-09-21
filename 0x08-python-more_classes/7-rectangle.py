@@ -99,3 +99,5 @@ if __name__ == "__main__":
     Rectangle.print_symbol = "C"
     myrectangle1 = Rectangle(8, 4)
     print(myrectangle1)
+    print(myrectangle1.__dict__)
+    print(Rectangle.__dict__)
