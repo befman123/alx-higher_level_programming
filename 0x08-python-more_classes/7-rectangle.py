@@ -2,9 +2,6 @@
 """ This module defines a class Rectangle"""
 
 
-from curses.textpad import rectangle
-
-
 class Rectangle:
     """ The class Rectangle
 
