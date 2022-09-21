@@ -80,9 +80,9 @@ class Rectangle:
         for i in range(0, self.height):
             for j in range(0, self.width):
                 try:
-                    total += str(self.print_symbol)
+                    s += str(self.print_symbol)
                 except Exception:
-                    total += type(self).print_symbol
+                    s += type(self).print_symbol
             if i != self.height - 1:
                 s = s + "\n"
         return s
