@@ -2,6 +2,9 @@
 """ This module defines a class Rectangle"""
 
 
+from curses.textpad import rectangle
+
+
 class Rectangle:
     """ The class Rectangle
 
@@ -79,7 +82,10 @@ class Rectangle:
             return ""
         for i in range(0, self.height):
             for j in range(0, self.width):
-                s = s + str(Rectangle.print_symbol)
+                try:
+                    total += str(self.print_symbol)
+                except Exception:
+                    total += type(self).print_symbol
             if i != self.height - 1:
                 s = s + "\n"
         return s
@@ -93,6 +99,6 @@ class Rectangle:
 
 
 if __name__ == "__main__":
-    Rectangle.printsymbol = "C"
+    Rectangle.print_symbol = "C"
     myrectangle1 = Rectangle(8, 4)
     print(myrectangle1)
