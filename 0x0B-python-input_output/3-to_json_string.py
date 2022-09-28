@@ -11,7 +11,7 @@ def to_json_string(my_obj):
     Returns:
         the serialized object
     """
-    return j.dumps(my_obj)
+    return j.dumps(my_obj, separators=[",", ":"])
 
 
 if __name__ == "__main__":
