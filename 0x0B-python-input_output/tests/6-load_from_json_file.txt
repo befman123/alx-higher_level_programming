@@ -1,0 +1,7 @@
+Test for loading an object from file
+====================================
+
+>>> f = __import__("6-load_from_json_file").load_from_json_file
+>>> obj = f("tet.txt")
+>>> print(obj[0])
+bef

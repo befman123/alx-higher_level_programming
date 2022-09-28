@@ -2,4 +2,5 @@ Save to file Tests
 ==================
 
 >>> mod = __import__("5-save_to_json_file").save_to_json_file
->>> mod('["bef", "tt"]', "object.json")
+>>> obj = ["bef", "tt"]
+>>> mod(obj, "tet.txt")
