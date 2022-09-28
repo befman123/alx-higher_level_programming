@@ -15,7 +15,7 @@ def save_to_json_file(my_obj, filename):
         with open(filename, "a", encoding="utf-8") as f:
             json.dump(my_obj, f)
     except PermissionError:
-        pass
+        raise PermissionError("")
 
 
 if __name__ == "__main__":
