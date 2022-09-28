@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+"""Writes to a new file"""
+
+
+def append_write(filename="", text=""):
+    """This function does the actual work
+
+    Arguments:
+        filename: a string representing the file name
+        text: the string to be written to the file
+    """
+    if filename == "" or filename is None or type(filename) is not str:
+        pass
+    else:
+        with open(filename, "a", encoding="utf-8") as f:
+            return f.write(text)
+
+
+if __name__ == "__main__":
+    pass

@@ -3,3 +3,4 @@ Test for write
 
 >>> mod = __import__("1-write_file")
 >>> mod.write_file("test.txt", "bef")
+3
