@@ -1,5 +1,5 @@
 check for serialize
 ===================
 >>> mod = __import__("3-to_json_string")
->>> mod.to_json_string(["bef", "thomas"])
-'["bef","thomas"]'
+>>> mod.to_json_string(["bef","thomas"])
+'["bef", "thomas"]'

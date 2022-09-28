@@ -1,0 +1,7 @@
+Test for deserialization
+========================
+
+>>> mod = __import__("4-from_json_string")
+>>> a = mod.from_json_string('["bef", "thomas"]')
+>>> print(a[0])
+bef
