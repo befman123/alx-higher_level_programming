@@ -1,3 +1,5 @@
 *main*
 *test*
 *~
+__pycache__
+*.pyc
