@@ -2,5 +2,5 @@ Test for write
 ==============
 
 >>> mod = __import__("2-append_write")
->>> mod.append_write("test.txt", "bef")
+>>> mod.append_write("tet.txt", "bef")
 3
