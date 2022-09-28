@@ -13,7 +13,7 @@ def write_file(filename="", text=""):
         pass
     else:
         with open(filename, "w", encoding="utf-8") as f:
-            f.write(text)
+            return f.write(text)
 
 
 if __name__ == "__main__":
