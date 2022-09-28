@@ -13,7 +13,7 @@ def to_json_string(my_obj):
     Returns:
         the serialized object
     """
-    return json.dumps(my_obj, separators=[",", ":"])
+    return json.dumps(my_obj)
 
 
 if __name__ == "__main__":
