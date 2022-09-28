@@ -13,7 +13,7 @@ def save_to_json_file(my_obj, filename):
             filename: the file to write the json of my_obj
     """
     with open(filename, "a", encoding="utf-8") as f:
-            json.dump(my_obj, f)
+        json.dump(my_obj, f)
 
 
 if __name__ == "__main__":
