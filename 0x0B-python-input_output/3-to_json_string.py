@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-import json as j
 """Writes to a new file"""
+
+
+import json
 
 
 def to_json_string(my_obj):
@@ -11,7 +13,7 @@ def to_json_string(my_obj):
     Returns:
         the serialized object
     """
-    return j.dumps(my_obj, separators=[",", ":"])
+    return json.dumps(my_obj, separators=[",", ":"])
 
 
 if __name__ == "__main__":
