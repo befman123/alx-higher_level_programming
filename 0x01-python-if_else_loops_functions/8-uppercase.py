@@ -11,5 +11,6 @@ def uppercase(str):
             upper_str += i
     print("{0}".format(upper_str))
 
+
 if __name__ == "__main__":
     pass
