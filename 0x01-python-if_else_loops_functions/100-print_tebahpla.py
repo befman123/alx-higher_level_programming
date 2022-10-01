@@ -4,7 +4,7 @@
 
 def func():
     for j in map(mp_func, range(0,26).__reversed__()):
-            print(chr(j), end="")
+            print("{0}".format(chr(j)), end="")
 
 def mp_func(j):
     if j == 0 or j % 2 == 0:
