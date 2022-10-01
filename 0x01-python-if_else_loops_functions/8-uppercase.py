@@ -13,4 +13,4 @@ def uppercase(str):
 
 
 if __name__ == "__main__":
-    print(uppercase("befiker damtew"))
+    pass
