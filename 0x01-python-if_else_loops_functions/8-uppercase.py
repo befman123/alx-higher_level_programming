@@ -9,8 +9,7 @@ def uppercase(str):
             upper_str += chr(ord(i) - 32)
         else:
             upper_str += i
-    return upper_str
-
+    print("{0}".format(upper_str))
 
 if __name__ == "__main__":
     pass
