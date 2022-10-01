@@ -7,6 +7,7 @@ def remove_char_at(str, n):
     for i in range(0, len(str)):
         if i != n:
             str_new += str[i]
+    return str_new
 
 
 if __name__ == "__main__":
