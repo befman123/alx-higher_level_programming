@@ -4,7 +4,7 @@
 
 def print_last_digit(number):
     number = int(number)
-    print("{0}".format(number.__abs__() % 10))
+    print("{0}".format(number.__abs__() % 10), end="")
 
 
 if __name__ == "__main__":
