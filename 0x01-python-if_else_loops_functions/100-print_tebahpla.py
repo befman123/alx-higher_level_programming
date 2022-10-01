@@ -3,11 +3,14 @@
 
 
 def func():
-    for i, j in zip(range(0, 26).__reversed__(), range(65, 91).__reversed__()):
-        if j % 2 == 0:
-            print(chr(j + 32), end="")
-        else:
+    for j in map(mp_func, range(0,26).__reversed__()):
             print(chr(j), end="")
+
+def mp_func(j):
+    if j == 0 or j % 2 == 0:
+        return (j + 65)
+    else:
+        return (j + 97)
 
 
 if __name__ == "__main__":
