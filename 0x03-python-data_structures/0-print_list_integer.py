@@ -6,8 +6,8 @@
 
 def print_list_integer(my_list=[]):
     for i in range(0, len(my_list)):
-        print('{0:d}'.format(my_list[i]))
+        print("{:d}".format(my_list[i]))
 
 
 if __name__ == "__main__":
-    print_list_integer([1, 2, "h", 4, 5])
+    print_list_integer([1, 2, 3, 4, 5])
