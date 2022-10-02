@@ -10,4 +10,4 @@ def print_reversed_list_integer(my_list=[]):
 
 
 if __name__ == "__main__":
-    print_list_integer([1, 2, 3, 4, 5])
+    pass
