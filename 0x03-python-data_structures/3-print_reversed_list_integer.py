@@ -5,8 +5,8 @@
 
 
 def print_reversed_list_integer(my_list=[]):
-    if len(my_list) == 0:
-        print()
+    if my_list is None:
+        pass
     for i in range(0, len(my_list)).__reversed__():
         print("{:d}".format(my_list[i]))
 
