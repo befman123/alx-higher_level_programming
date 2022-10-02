@@ -5,9 +5,9 @@
 
 
 def print_list_integer(my_list=[]):
-    for el in my_list:
-        print("{}".format(el))
+    for i in range(0, len(my_list)):
+        print("{}".format(my_list[i]))
 
 
 if __name__ == "__main__":
-    pass
+    print_list_integer([1, 2, 3, 4, 5])
