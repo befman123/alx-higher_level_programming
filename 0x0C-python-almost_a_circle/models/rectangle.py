@@ -3,7 +3,7 @@
     The class rectangle inherits from
     base in base.py
 """
-import base
+from . import base
 
 
 class Rectangle(base.Base):
@@ -31,7 +31,7 @@ class Rectangle(base.Base):
 
     @width.setter
     def width(self, value):
-        if value is not int:
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value <= 0:
             raise ValueError("width must be {} 0".format(">"))
@@ -44,7 +44,7 @@ class Rectangle(base.Base):
 
     @height.setter
     def height(self, value):
-        if value is not int:
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value <= 0:
             raise ValueError("height must be {} 0".format(">"))
@@ -57,7 +57,7 @@ class Rectangle(base.Base):
 
     @x.setter
     def x(self, value):
-        if value is not int:
+        if type(value) is not int:
             raise TypeError("x must be an integer")
         elif value < 0:
             raise ValueError("x must be {} 0".format(">="))
@@ -70,7 +70,7 @@ class Rectangle(base.Base):
 
     @y.setter
     def y(self, value):
-        if value is not int:
+        if type(value) is not int:
             raise TypeError("y must be an integer")
         elif value < 0:
             raise ValueError("y must be {} 0".format(">="))
@@ -94,7 +94,7 @@ class Rectangle(base.Base):
                 for xs in range(0, self.x):
                     print(" ", end="")
             for w in range(0, self.width):
-                print("".format("#"), end="")
+                print("#".format("#"), end="")
             print()
 
     def __str__(self):
@@ -124,11 +124,14 @@ class Rectangle(base.Base):
             self.y = kwargs["y"]
             self.id = kwargs["id"]
         else:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except Exception as e:
+                pass
 
 
 if __name__ == "__main__":
