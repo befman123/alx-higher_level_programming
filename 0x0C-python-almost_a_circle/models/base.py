@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """ This module contains the base class
     to inherit from
 """
@@ -20,19 +20,11 @@ class Base:
             id: possible value of the private instance
                 variable id
         """
-        self.id = id
-
-    @property
-    def id(self):
-        return self.id
-
-    @id.setter
-    def id(self, value):
         if id is not None:
-            self.id = value
+            self.id = id
         else:
-            __nb_objects += 1
-            self.id = __nb_objects
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
 
 
 if __name__ == "__main__":
