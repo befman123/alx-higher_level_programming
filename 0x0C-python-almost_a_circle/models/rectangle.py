@@ -90,9 +90,8 @@ class Rectangle(base.Base):
             the character # by taking care of x and y
         """
         for h in range(0, self.height):
-            if self.y > 0:
-                for xs in range(0, self.x):
-                    print(" ", end="")
+            for xs in range(0, self.x):
+                print(" ", end="")
             for w in range(0, self.width):
                 print("{0}".format("#"), end="")
             print()
