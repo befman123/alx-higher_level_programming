@@ -31,6 +31,26 @@ class Square(rectangle.Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        list_args = ["id", "size", "x", "y"]
+
+        if len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.__dict__["id"] = args[0]
+                elif i == 1:
+                    type(self).__dict__["size"].__set__(self, args[1])
+                else:
+                    self.__dict__[f"_Rectangle__{list_args[i]}"] = args[i]
+        else:
+            for key in kwargs:
+                if key == "id":
+                    self.__dict__["id"] = kwargs["id"]
+                elif key == "size":
+                    type(self).__dict__["size"].__set__(self, kwargs["size"])
+                else:
+                    self.__dict__[f"_Rectangle__{key}"] = kwargs[f"{key}"]
+
 
 if __name__ == "__main__":
     pass
