@@ -4,6 +4,9 @@
 """
 
 
+import json
+
+
 class Base:
     """Class base
 
@@ -25,6 +28,19 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """This function does the actual work
+
+        Arguments:
+            obj: the object to serialize
+        Returns:
+            the serialized object
+        """
+        if list_dictionaries is not None or len(list_dictionaries) != 0:
+            return json.dumps(list_dictionaries)
+        else:
+            return "[]"
 
 
 if __name__ == "__main__":
