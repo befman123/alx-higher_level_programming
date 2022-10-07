@@ -89,6 +89,15 @@ class Square(rectangle.Rectangle):
                     type(self).__dict__["size"].__set__(self, kwargs["size"])
                 else:
                     self.__dict__[f"_Rectangle__{key}"] = kwargs[f"{key}"]
+    def to_dictionary(self):
+        """ convert self to dictionary
+
+            returns:
+                dictionary representaion of Square's
+                properties
+        """
+        return {"id": self.id, "size": self.size,
+                "x": self.x, "y": self.y}
 
 
 if __name__ == "__main__":
