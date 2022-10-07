@@ -22,7 +22,7 @@ class Square(rectangle.Rectangle):
                       height and width
                 x: assigned to inherited property x
                 y: assigned to inherited property y
-                id: assigned to inherited instance variable 
+                id: assigned to inherited instance variable
                     (from base.Base) id
             Note:
                 Only super is called since a square has both height
@@ -51,9 +51,9 @@ class Square(rectangle.Rectangle):
     def size(self, value):
         """ setter method for the property size
             Arguments:
-                value: int value set to both width and 
+                value: int value set to both width and
                         height accordingly
-            
+
             Note:
                 assigning value to rectangles height and width
                 will pass through the setters in the parent class
@@ -67,9 +67,9 @@ class Square(rectangle.Rectangle):
             if *args is empty it tries to use **kwargs
 
             Note:
-                The order of assignment if *args is used is 
-                important ["id", "size", "x", "y"] 
-        
+                The order of assignment if *args is used is
+                important ["id", "size", "x", "y"]
+
         """
         list_args = ["id", "size", "x", "y"]
 
