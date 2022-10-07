@@ -148,8 +148,8 @@ class Rectangle(base.Base):
                 dictionary representaion of Rectangle and its
                 properties
         """
-        return {"id":self.id, "width":self.width, "height":self.height,
-                "x":self.x, "y":self.y}
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
 
 
 if __name__ == "__main__":
