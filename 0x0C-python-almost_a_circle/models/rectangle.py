@@ -89,6 +89,8 @@ class Rectangle(base.Base):
         """ print in stdout the Rectangle instance with
             the character # by taking care of x and y
         """
+        for n in range(0, self.y):
+            print()
         for h in range(0, self.height):
             for xs in range(0, self.x):
                 print(" ", end="")
