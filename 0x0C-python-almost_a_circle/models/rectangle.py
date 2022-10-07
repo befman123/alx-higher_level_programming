@@ -57,6 +57,9 @@ class Rectangle(base.Base):
 
     @x.setter
     def x(self, value):
+        """ setter for property x, checks if value is
+            a positive integer and sets it to _x
+        """
         if type(value) is not int:
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -70,6 +73,9 @@ class Rectangle(base.Base):
 
     @y.setter
     def y(self, value):
+        """ setter for property y, checks if value is
+            a positive integer and sets it to _y
+        """
         if type(value) is not int:
             raise TypeError("y must be an integer")
         elif value < 0:
@@ -88,6 +94,9 @@ class Rectangle(base.Base):
     def display(self):
         """ print in stdout the Rectangle instance with
             the character # by taking care of x and y
+
+            Note:
+                x prints empty space and y empty line
         """
         for n in range(0, self.y):
             print()
@@ -131,6 +140,16 @@ class Rectangle(base.Base):
                     self.__dict__["id"] = kwargs["id"]
                 else:
                     type(self).__dict__[key].__set__(self, kwargs[key])
+
+    def to_dictionary(self):
+        """ convert self to dictionary
+
+            returns:
+                dictionary representaion of Rectangle and its
+                properties
+        """
+        return {"id":self.id, "width":self.width, "height":self.height,
+                "x":self.x, "y":self.y}
 
 
 if __name__ == "__main__":
