@@ -4,7 +4,6 @@
 """
 
 
-from re import S
 from . import rectangle
 
 
@@ -22,6 +21,15 @@ class Square(rectangle.Rectangle):
     def __str__(self):
         s = f"[Square] ({self.id}) {self.x}/{self.y} - {self.height}"
         return s
+
+    @property
+    def size(self):
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
 
 
 if __name__ == "__main__":
