@@ -94,7 +94,7 @@ class Rectangle(base.Base):
                 for xs in range(0, self.x):
                     print(" ", end="")
             for w in range(0, self.width):
-                print("#".format("#"), end="")
+                print("{0}".format("#"), end="")
             print()
 
     def __str__(self):
@@ -118,11 +118,11 @@ class Rectangle(base.Base):
             number of args should be five
         """
         if len(args) == 0:
+            self.id = kwargs["id"]
             self.width = kwargs["width"]
             self.height = kwargs["height"]
             self.x = kwargs["x"]
             self.y = kwargs["y"]
-            self.id = kwargs["id"]
         else:
             try:
                 self.id = args[0]
