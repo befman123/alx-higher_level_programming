@@ -4,6 +4,7 @@
 """
 
 
+from re import S
 from . import rectangle
 
 
@@ -18,9 +19,10 @@ class Square(rectangle.Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
-    def __str___(self):
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.height}"
-    
+    def __str__(self):
+        s = f"[Square] ({self.id}) {self.x}/{self.y} - {self.height}"
+        return s
 
-    if __name__ == "__main__":
-        pass
+
+if __name__ == "__main__":
+    pass
