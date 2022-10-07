@@ -30,12 +30,14 @@ class Base:
             self.id = Base.__nb_objects
 
     def to_json_string(list_dictionaries):
-        """This function does the actual work
+        """ returns the json representaion of
+            the list of dictionaries
 
         Arguments:
-            obj: the object to serialize
+            list_dictionaries: the object to serialize
         Returns:
-            the serialized object
+            the serialized list of dictionaries or empty list
+            if the list of dictionaries is None or empty
         """
         if list_dictionaries is not None or len(list_dictionaries) != 0:
             return json.dumps(list_dictionaries)
