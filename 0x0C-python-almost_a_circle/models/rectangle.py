@@ -121,10 +121,16 @@ class Rectangle(base.Base):
         list_args = ["id", "width", "length", "x", "y"]
         if len(args) != 0:
             for i in range(0, len(args)):
-                type(self).__dict__[list_args[i]].__set__(self, args[i])
+                if i == 0:
+                    self.__dict__["id"] == args[0]
+                else:
+                    type(self).__dict__[list_args[i]].__set__(self, args[i])
         else:
             for key in kwargs:
-                type(self).__dict__[key].__set__(self,kwargs[key])
+                if key == "id":
+                    self.__dict__["id"] = kwargs["id"]
+                else:
+                    type(self).__dict__[key].__set__(self, kwargs[key])
 
 
 if __name__ == "__main__":
