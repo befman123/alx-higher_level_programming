@@ -118,21 +118,13 @@ class Rectangle(base.Base):
             Argument order is super important, and
             number of args should be five
         """
-        if len(args) == 0:
-            self.id = kwargs["id"]
-            self.width = kwargs["width"]
-            self.height = kwargs["height"]
-            self.x = kwargs["x"]
-            self.y = kwargs["y"]
+        list_args = ["id", "width", "length", "x", "y"]
+        if len(args) != 0:
+            for i in range(0, len(args)):
+                type(self).__dict__[list_args[i]].__set__(self, args[i])
         else:
-            try:
-                self.id = args[0]
-                self.width = args[1]
-                self.height = args[2]
-                self.x = args[3]
-                self.y = args[4]
-            except Exception as e:
-                pass
+            for key in kwargs:
+                type(self).__dict__[key].__set__(self,kwargs[key])
 
 
 if __name__ == "__main__":
