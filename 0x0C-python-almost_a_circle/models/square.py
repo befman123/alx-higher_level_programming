@@ -89,6 +89,7 @@ class Square(rectangle.Rectangle):
                     type(self).__dict__["size"].__set__(self, kwargs["size"])
                 else:
                     self.__dict__[f"_Rectangle__{key}"] = kwargs[f"{key}"]
+
     def to_dictionary(self):
         """ convert self to dictionary
 
