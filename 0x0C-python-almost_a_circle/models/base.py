@@ -48,6 +48,26 @@ class Base:
         else:
             return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """ Desrializes the json string to a list of
+            dictionaries
+
+            Arguments:
+                json_string: a json representation of a list of
+                                dictionaries
+
+            Returns:
+                a list of dictionaries or an empty list(if json_string is
+                empty or None) 
+        """
+        if json_string is None:
+            return []
+        elif len(json_string) == 0:
+            return []
+        else:
+            return json.loads(json_string)
+
 
 if __name__ == "__main__":
     pass
