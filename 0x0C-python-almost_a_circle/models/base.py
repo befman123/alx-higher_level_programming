@@ -38,10 +38,13 @@ class Base:
             the serialized list of dictionaries or empty list
             if the list of dictionaries is None or empty
         """
-        if list_dictionaries is not None or len(list_dictionaries) != 0:
-            return json.dumps(list_dictionaries)
+        temp_list = []
+        if list_dictionaries is None: 
+            return json.dumps(temp_list)
+        elif len(list_dictionaries) == 0:
+            return json.dumps(temp_list)
         else:
-            return json.dumps([])
+            return json.dumps(list_dictionaries)
 
 
 if __name__ == "__main__":
