@@ -59,7 +59,7 @@ class Base:
 
             Returns:
                 a list of dictionaries or an empty list(if json_string is
-                empty or None) 
+                empty or None)
         """
         if json_string is None:
             return []
