@@ -6,6 +6,7 @@
 
 import json
 
+
 class Base:
     """Class base
 
@@ -40,7 +41,7 @@ class Base:
             if the list of dictionaries is None or empty
         """
         temp_list = []
-        if list_dictionaries is None: 
+        if list_dictionaries is None:
             return json.dumps(temp_list)
         elif len(list_dictionaries) == 0:
             return json.dumps(temp_list)
