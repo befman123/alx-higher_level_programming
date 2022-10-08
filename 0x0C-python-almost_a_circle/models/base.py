@@ -6,7 +6,6 @@
 
 import json
 
-
 class Base:
     """Class base
 
@@ -43,12 +42,6 @@ class Base:
             return json.dumps(list_dictionaries)
         else:
             return json.dumps([])
-
-    def save_to_file(cls, list_objs):
-        if len(list_objs) != 0  and type(list_objs[0]) is R.Rectangle:
-            filename = f"{R.Rectangle.__class__}.json"
-        with open(filename, "w", encoding="utf-8") as f:
-            f.write(cls.to_json_string(list_objs))
 
 
 if __name__ == "__main__":
