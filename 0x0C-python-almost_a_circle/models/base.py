@@ -4,6 +4,7 @@
 """
 
 
+from fileinput import filename
 import json
 
 
@@ -84,6 +85,61 @@ class Base:
             obj = cls(1)
             obj.update(**dictionary)
             return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """ Creates a list of instances from a json file
+
+            Note:
+                The returned list of objects depends on the
+                calling class
+
+            Returns:
+                A list of instances of a Rectangle or Square
+                class
+        """
+        list_inst = []
+        if cls.__name__ == "Rectangle":
+            file_name = "Rectangle.json"
+        elif cls.__name__ == "Square":
+            file_name = "Square.json"
+
+        with open(file_name, "r", encoding="utf-8") as f:
+            if f is None:
+                return []
+            else:
+                list_dict = cls.from_json_string(f.read())
+                for dict in list_dict:
+                    obj = cls(1, 1)
+                    obj.update(**dict)
+                    list_inst.append(obj)
+                return list_inst
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ Save objects of the children classes Square and Rectangle
+
+            Note:
+                if list_objs is empty or list_dict remains empty, an empty
+                file is saved
+            Arguments:
+                list_objs:  a list of instances of the Rectangle or Square
+                            classes
+        """
+        list_dict = []
+        for obj in list_objs:
+            list_dict.append(obj.to_dictionary())
+
+        if cls.__name__ == "Rectangle":
+            file_name = "Rectangle.json"
+        elif cls.__name__ == "Square":
+            file_name = "Square.json"
+
+        with open(file_name, "w", encoding="utf-8") as f:
+            if len(list_dict) == 0:
+                f.write("")
+            else:
+                f.write(cls.to_json_string(list_dict))
 
 
 if __name__ == "__main__":
