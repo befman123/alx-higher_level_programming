@@ -137,7 +137,7 @@ class Base:
 
         with open(file_name, "w", encoding="utf-8") as f:
             if len(list_dict) == 0:
-                f.write("")
+                f.write(cls.to_json_string([]))
             else:
                 f.write(cls.to_json_string(list_dict))
 
