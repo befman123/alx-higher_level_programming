@@ -141,6 +141,54 @@ class Base:
                 the_str = cls.to_json_string(list_dict)
             f.write(the_str)
 
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Saves a list of objects to a <class name>.csv file
+
+            Arguments:
+                list_objs: a list of objects to be written to file
+        """
+        if cls.__name__ == "Rectangle":
+            file_name = "Rectangle.csv"
+        elif cls.__name__ == "Square":
+            file_name = "Square.csv"
+
+        with open(file_name, "w", encoding="utf-8") as f:
+            for obj in list_objs:
+                if len(list_objs) == 0 or list_objs is None:
+                    f.write("")
+                if file_name == "Rectangle.csv":
+                    f.write(f"{obj.id},{obj.width},{obj.height},{obj.x},{obj.y}\n")
+                elif file_name == "Square.csv":
+                    f.write(f"{obj.id},{obj.size},{obj.x},{obj.y}\n")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Loads from file a list of objects
+        """
+        if cls.__name__ == "Rectangle":
+            file_name = "Rectangle.csv"
+        elif cls.__name__ == "Square":
+            file_name = "Square.csv"
+
+        list_objs_csv = []
+        if exists(file_name):
+            with open(file_name, encoding="utf-8") as f:
+                for l in f:
+                    if file_name == "Rectangle.csv":
+                        s = l.split(",", 5)
+                        s[4].replace("\n", "")
+                        obj = cls(1,1)
+                        obj.update(int(s[0]), int(s[1]), int(s[2]), int(s[3]), int(s[4]))
+                        list_objs_csv.append(obj)
+                    elif file_name == "Square.csv":
+                        s = l.split(",", 4)
+                        s[3].replace("\n", "")
+                        obj = cls(1)
+                        obj.update(int(s[0]), int(s[1]), int(s[2]), int(s[3]))
+                        list_objs_csv.append(obj)
+        return list_objs_csv
+
 
 if __name__ == "__main__":
     pass
