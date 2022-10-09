@@ -111,7 +111,7 @@ class Base:
                 list_dict = cls.from_json_string(f.read())
                 for dict in list_dict:
                     obj = cls(1, 1)
-                    obj.update(**dict)
+                    obj.create(**dict)
                     list_inst.append(obj)
                 return list_inst
 
