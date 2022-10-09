@@ -5,6 +5,7 @@
 
 
 from fileinput import filename
+from genericpath import exists
 import json
 
 
@@ -104,16 +105,14 @@ class Base:
         elif cls.__name__ == "Square":
             file_name = "Square.json"
 
-        with open(file_name, "r", encoding="utf-8") as f:
-            if f is None:
-                return []
-            else:
+        if exists(file_name):
+            with open(file_name, "r", encoding="utf-8") as f:
                 list_dict = cls.from_json_string(f.read())
                 for dict in list_dict:
                     obj = cls(1, 1)
                     obj.create(**dict)
-                    list_inst.append(obj)
-                return list_inst
+                    list_inst.append(obj) 
+        return list_inst
 
     @classmethod
     def save_to_file(cls, list_objs):
