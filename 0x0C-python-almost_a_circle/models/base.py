@@ -111,7 +111,7 @@ class Base:
                 for dict in list_dict:
                     obj = cls(1, 1)
                     obj = obj.create(**dict)
-                    list_inst.append(obj) 
+                    list_inst.append(obj)
         return list_inst
 
     @classmethod
