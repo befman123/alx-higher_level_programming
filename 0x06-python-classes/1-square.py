@@ -4,7 +4,7 @@
 
 class Square:
     """ class Square"""
-    def __init__(size):
+    def __init__(self, size):
         """ We define the size variable as a private instance of the class"""
         self.__size = size
 
