@@ -94,7 +94,7 @@ class Square:
         return self.area() <= value.area()
 
     def __lt__(self, value, /):
-        return self.area() < value.are()
+        return self.area() < value.area()
 
     def __eq__(self, value, /):
         return self.area() == value.area()
