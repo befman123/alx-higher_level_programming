@@ -32,7 +32,7 @@ class Square:
         else:
             self.__size = value
 
-    def __str__(self) -> str:
+    def __repr__(self) -> str:
         """ Return string representation of this class"""
         the_str = ""
         if self.size == 0:
