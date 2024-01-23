@@ -84,7 +84,10 @@ class Square:
                 the_str += " "
             for j in range(0, self.size):
                 the_str += "#"
-            the_str += "\n"
+            if i ==  (self.size - 1):
+                continue
+            else:
+                the_str += "\n"
         return the_str
 
 
